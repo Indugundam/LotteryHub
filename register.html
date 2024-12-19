@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('lottery.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            /* Expanded width */
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .input-container {
+            flex: 1 1 calc(50% - 20px);
+            /* Flexbox for two columns */
+            min-width: 250px;
+            /* Ensure fields don't get too narrow */
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Slightly darker for contrast */
+            padding: 10px 20px;
+            /* Adjusted padding to reduce height */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar img {
+            height: 80px;
+            width: auto;
+            border-radius: 5px;
+            /* Optional: For rounded corners */
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            /* Reduced padding for links */
+            font-size: 0.9em;
+            /* Reduced font size */
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #007bff;
+        }
+
+        .navbar a.active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Logo Section -->
+        <a href="home.html">
+            <img src="logo.png" alt="Lottery Hub Logo">
+        </a>
+        <!-- Navigation Links -->
+        <div class="navbar-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Sign Up</a>
+            <a href="services.html">Services</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Lottery Hub Registration</h1>
+        <form id="registrationForm" action="home.html">
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your Full Name" autocomplete="name" required>
+                </div>
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your Username" autocomplete="username" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your Email" autocomplete="email" required>
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="input-container">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your Phone Number" pattern="[0-9]{10}"
+                        autocomplete="tel" required>
+                    <div id="phoneError" class="error"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your Password" autocomplete="new-password"
+                        required>
+                    <div id="passwordError" class="error"></div>
+                </div>
+                <div class="input-container">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your Password"
+                        autocomplete="new-password" required>
+                    <div id="confirmPasswordError" class="error"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="country">Country</label>
+                    <select id="country" required>
+                        <option value="">Select your Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+                </div>
+            </div>
+        </form>
+        <button type="submit" onclick="register()">Register</button>
+    </div>
+
+    <script>
+        // Clear previous error messages
+        function clearErrors() {
+            document.getElementById("emailError").textContent = '';
+            document.getElementById("phoneError").textContent = '';
+            document.getElementById("passwordError").textContent = '';
+            document.getElementById("confirmPasswordError").textContent = '';
+        }
+
+        // Validate email format
+        function validateEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+
+        function register() {
+            // Clear previous error messages
+            clearErrors();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Validation checks
+            let valid = true;
+
+            // Email validation
+            if (!validateEmail(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                valid = false;
+            }
+
+            // Phone number validation
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById("phoneError").textContent = "Phone number should be exactly 10 digits.";
+                valid = false;
+            }
+
+            // Password match validation
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+                valid = false;
+            }
+
+            // Password strength validation (at least 8 characters, 1 number, 1 uppercase letter)
+            if (!/(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}/.test(password)) {
+                document.getElementById("passwordError").textContent = "Password must be at least 8 characters long, include at least one number and one uppercase letter.";
+                valid = false;
+            }
+
+            if (valid) {
+                // Store credentials in localStorage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+
+                alert('Registration successful!');
+                window.location.href = "login.html"; // Redirect to login page
+            }
+        }
+    </script>
+</body>
+
+</html>

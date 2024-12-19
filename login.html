@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" href="image.png" type="image/x-icon">
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('lottery.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        h3 {
+            color: #333333;
+        }
+        label {
+            margin: 0;
+            font-size: 1em;
+            color: #333333;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .toggle-buttons button {
+            width: 150px;
+            margin: 0 5px;
+            padding: 10px;
+            font-size: 1em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .toggle-buttons button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .toggle-buttons button.inactive {
+            background-color: #f0f8ff;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin-top: 15px;
+            color: #333333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for contrast */
+            padding: 5px 20px; /* Reduced padding to decrease height */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar img {
+            height: 60px; /* Reduced image height */
+            width: auto;
+            border-radius: 5px; /* Optional: For rounded corners */
+        }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px; /* Reduced padding for links */
+            font-size: 0.9em; /* Reduced font size */
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            background-color: #007bff;
+        }
+        .navbar a.active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- Logo Section -->
+        <a href="home.html">
+            <img src="logo.png" alt="Lottery Hub Logo">
+        </a>
+        <!-- Navigation Links -->
+        <div class="navbar-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Sign Up</a>
+            <a href="services.html">Services</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Login</h1>
+        <h3>Enter your login credentials</h3>
+
+        <div class="toggle-buttons">
+            <button id="usernameToggle" class="active" onclick="toggleLoginField('username')">Username</button>
+            <button id="mobileToggle" class="inactive" onclick="toggleLoginField('mobile')">Mobile Number</button>
+        </div>
+
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter your Username" required>
+            <input type="tel" id="mobile" placeholder="Enter your Mobile Number" pattern="[0-9]{10}" style="display: none;" required>
+
+            <input type="password" id="password" placeholder="Enter your Password" required>
+
+            <a href="forgot_password.html">Forgot password?</a><br><br>
+
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+
+        <p>Not registered? <a href="register.html">Create an account</a></p>
+    </div>
+
+    <script>
+        // Clear the input fields on page load or refresh
+        window.onload = function() {
+            document.getElementById('loginForm').reset(); // This will reset the form fields
+        };
+    
+        function toggleLoginField(option) {
+            const usernameField = document.getElementById('username');
+            const mobileField = document.getElementById('mobile');
+            const usernameToggle = document.getElementById('usernameToggle');
+            const mobileToggle = document.getElementById('mobileToggle');
+    
+            if (option === 'username') {
+                usernameField.style.display = 'block';
+                usernameField.required = true;
+                mobileField.style.display = 'none';
+                mobileField.required = false;
+                usernameToggle.classList.add('active');
+                usernameToggle.classList.remove('inactive');
+                mobileToggle.classList.add('inactive');
+                mobileToggle.classList.remove('active');
+            } else if (option === 'mobile') {
+                mobileField.style.display = 'block';
+                mobileField.required = true;
+                usernameField.style.display = 'none';
+                usernameField.required = false;
+                mobileToggle.classList.add('active');
+                mobileToggle.classList.remove('inactive');
+                usernameToggle.classList.add('inactive');
+                usernameToggle.classList.remove('active');
+            }
+        }
+    
+        function validateLogin() {
+            // Predefined credentials (replace these with your database or API call for real-world apps)
+            const validUsername = "user123";
+            const validPassword = "password123";
+            const validMobile = "9876543210";
+    
+            const usernameField = document.getElementById('username');
+            const mobileField = document.getElementById('mobile');
+            const passwordField = document.getElementById('password');
+    
+            const username = usernameField.value.trim();
+            const mobile = mobileField.value.trim();
+            const password = passwordField.value.trim();
+    
+            if ((username === validUsername || mobile === validMobile) && password === validPassword) {
+                alert("Login successful!");
+                window.location.href = "home.html"; // Redirect to the home page
+            } else {
+                alert("Invalid login credentials. Please try again.");
+            }
+        }
+    
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get user input
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Retrieve credentials from localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+    
+            // Validate login credentials
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login successful!');
+                window.location.href = "home.html"; // Redirect to homepage
+            } else {
+                alert('Invalid username or password!');
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

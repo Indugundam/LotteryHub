@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f9;
+            background: url('lottery.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Main Content Overlay */
+        .overlay {
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: rgb(16, 15, 15);
+            margin-top: 200px;
+            /* To avoid overlap with navbar */
+        }
+
+        .overlay h1 {
+            font-size: 2.5em;
+        }
+
+        .overlay p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Lottery Hub</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Sign Up</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="overlay">
+        <h1>Welcome to Lottery Hub</h1>
+        <p>Your Gateway to Dreams and Fortunes!</p>
+    </div>
+</body>
+
+</html>
