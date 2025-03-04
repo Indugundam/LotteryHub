@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/register.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Lottery Hub</h1>
+        <nav class="nav">
+            <ul><!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Registration</title>
+                    <link rel="stylesheet" href="../css/register.css">
+                </head>
+                <body>
+                    <header class="header">
+                        <h1>Lottery Hub</h1>
+                        <nav class="nav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contacts.html">Contact Us</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="register.html" class="active">Sign Up</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <main>
+                        <div class="container">
+                            <h1>Lottery Hub Registration</h1>
+                            <form id="registrationForm" action="RegisterServlet" method="post">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" name="name" id="name" required>
+                
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" required>
+                
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" required>
+                
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select name="country" id="country" required>
+                                        <option value="">Select your Country</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Australia">Australia</option>
+                                    </select>
+                
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" name="dob" id="dob" required>
+                                </div>
+                                <button type="submit">Register</button>
+                            </form>
+                        </div>
+                    </main>
+                </body>
+                </html>
+                
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Lottery Hub Registration</h1>
+            <form action="RegisterServlet" method="post">
+                <div class="form-group">
+                    <div class="input-container">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your Full Name" autocomplete="name" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your Username" autocomplete="username"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your Email" autocomplete="email" required>
+                        <div id="emailError" class="error"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your Phone Number" pattern="[0-9]{10}"
+                            autocomplete="tel" required>
+                        <div id="phoneError" class="error"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-container">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your Password"
+                            autocomplete="new-password" required>
+                        <div id="passwordError" class="error"></div>
+                    </div>
+                    <div class="input-container">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your Password"
+                            autocomplete="new-password" required>
+                        <div id="confirmPasswordError" class="error"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-container">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select your Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                </div>
+            </form>
+            <button type="submit" onclick="register()">Register</button>
+        </div>
+    </main>
+</body>
+</html>
