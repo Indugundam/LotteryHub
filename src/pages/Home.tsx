@@ -37,7 +37,7 @@ const Home = () => {
         
         {/* About Section */}
         <section className="mb-16 text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Welcome to Ticket Treasure Hub</h2>
+          <h2 className="text-3xl font-bold mb-4">Welcome to Lottery Hub</h2>
           <p className="text-muted-foreground mb-8">
             Your destination for exciting lotteries with life-changing prizes. 
             Browse our collection of lotteries, buy tickets, and try your luck today!
