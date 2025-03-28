@@ -3,7 +3,7 @@
 Lottery Hub is a web application that enables users to participate in secure and transparent lottery draws. It provides a seamless user experience for lottery enthusiasts.  
 
 ## 🚀 Live Demo  
-🔗 Click here to visit **Lottery Hub**: [Live Demo](https://ticket-treasure-hub.vercel.app/)  
+🔗 Click here to visit **Lottery Hub**: [Live Demo](https://lotteryhub.vercel.app/)  
 
 ## ✨ Features  
 🔹 **Decentralized Lottery System** – Ensures fair and tamper-proof lottery draws  
